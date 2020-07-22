@@ -1,0 +1,57 @@
+.contact {
+    height: 100vh;
+    margin: 2em 4em 4em;
+    padding: 1em;
+    position: relative;    
+}
+
+.contact-title h3 {
+    color: #F97300;
+}
+
+.contact-text {
+    text-align: left;
+    display: inline-block;
+    max-width: 400px;
+    margin-top: 10em;
+}
+
+.contact-form {
+    padding: 2em 1px;
+    max-width: 340px;
+    float: right;
+    margin-top: 5em;
+    margin-right: 18em;
+}
+
+.contact .contact-form .btn-secondary {
+    background: #F97300;
+    color: #fff;
+    border:0;  
+}
+
+.form-control {
+    margin-top: 5px;
+    
+}
+
+.contact .contact-form .form-control::placeholder {
+    color: #888;
+    font-size: 16px;
+}
+
+@media (max-width: 991px) {
+    .contact-text {
+        margin-top: 2em;
+    }
+    
+}
+
+@media (max-width: 1125px) {
+    .contact-form {
+        margin-top: 2em;
+        float: none;
+        text-align: center;
+        margin-left: 1em;
+    }
+}

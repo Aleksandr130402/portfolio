@@ -1,0 +1,24 @@
+.description {
+    margin: 2em 4em 4em;
+    padding: 1em;
+    position: relative;  
+   }
+
+.description h3 {
+    color:#F97300;
+    margin-bottom: 1em;
+}
+
+.description dt {
+    margin-bottom: 2em;
+}
+
+.description dd {
+    color:#767676;
+}
+
+@media (max-width: 767px) {
+    .description dt {
+        margin-top: 1em;
+    }
+}

@@ -1,0 +1,25 @@
+.navbar {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+ul {
+	list-style: none;
+}
+
+.nav-link {
+ cursor: pointer;
+}
+
+.nav-link {
+ margin-left: 3em !important;
+ color: black;
+ font-weight: bold;
+}
+
+.nav-item > .active {
+    border-bottom: 1px solid #F97300;
+}
+
+
+

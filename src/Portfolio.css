@@ -1,0 +1,33 @@
+.portfolio {
+    margin: 2em 4em 4em;
+    padding: 1em;
+    position: relative;
+   }
+
+.portfolio h3 {
+    color: #F97300;
+    margin-bottom: 1em; 
+}
+
+.portfolio-scale {
+    display: inline-block; 
+    overflow: hidden; 
+}
+
+.portfolio-scale img {
+    transition: 0.3s; 
+    display: block; 
+}
+
+.portfolio-scale img:hover {
+    transform: scale(1.2); 
+}
+
+.portfolio-box {
+    display: block;
+    margin: 0 auto 30px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+}
