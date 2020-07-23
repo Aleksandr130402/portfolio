@@ -1,57 +1,56 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const path = require('path');
 const cors = require('cors');
 
-const app = express();
+const server = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(cors());
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded());
+server.use(express.static(path.join(__dirname, 'client/build')));
+server.use(cors());
 
-app.get('/',()=>{
-    resizeBy.send('welcome to my forma')
-})
+const port = 5000;
 
-app.post('/api/forma', (req,res)=>{
+server.get('/', (request, response) => {
+    return response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
-    let data = req.body
-    let smtpTransport = nodemailer.createTransport({
-        service: 'Gmail',
-        port: 465,
-        auth:{
-            user:'businessmail1304@gmail.com',
-            pass:'eugenia130402'
-        }
-    });
+server.post('/api/sendEmail', async (request, response) => {
+    try {
+        let data = request.body;
 
-let mailOptions={
-    from: data.email,
-    to: 'businessmail1304@gmail.com',
-    subject: `Message from ${data.name}`,
-    html:`
-    
-    <h3>Informations</h3>
-        <ul>
-        <li>Name: ${data.name}</li>
-        <li>Name: ${data.email}</li>
-        </ul>
+        let smtpTransport = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: 'login',
+                user: 'sanyoktest@gmail.com',
+                pass: 'sanyoktest123'
+            }
+        });
 
-        <h3>Message</h3>
-        <p>${data.message}</p>
-    `
-};
+        let mailOptions = {
+            from: data.from,
+            to: 'businessmail1304@gmail.com',
+            subject: `Message from ${data.name}`,
+            html: `
+            <h3>Informations</h3>
+            <ul>
+                <li>Name: ${data.name}</li>
+            </ul>
+            <h3>Message</h3>
+            <p>${data.message}</p>
+        `
+        };
 
-smtpTransport.sendMail(mailOptions, (error,response)=>{
+        await smtpTransport.sendMail(mailOptions);
 
-    if(error){
-        res.send(error)
+        return response.send('Email was successfully sent')
+    } catch (e) {
+        return response.send('Sorry, we unable to send an email right now...')
     }
-    else {
-        res.send('Success')
-    }
-})
+});
 
-smtpTransport.close();
 
-})
+server.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
