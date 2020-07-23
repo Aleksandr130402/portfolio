@@ -11,7 +11,7 @@ server.use(bodyParser.urlencoded());
 server.use(express.static(path.join(__dirname, 'client/build')));
 server.use(cors());
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 server.get('/', (request, response) => {
     return response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
