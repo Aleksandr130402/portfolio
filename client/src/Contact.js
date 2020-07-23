@@ -23,7 +23,7 @@ class Contact extends Component {
             message: this.state.message
         };
 
-        axios.post('https://portfolio-sanyok.herokuapp.com/api/sendEmail', data)
+        axios.post('https://aleksandr-stolitenko.herokuapp.com/api/sendEmail', data)
             .then(res => {
                 this.setState({
                     sent: true
