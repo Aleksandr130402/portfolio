@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     "MIME-Version: 1.0\r\n" . 
     "Content-Type: text/html; charset=iso-8859-1\r\n";
 
-    $to = 'bill.r@meta.ua';
+    $to = 'cwo36597@eoopy.com';
     $subject = 'Contacting you';
     
     if (mail($to, $subject, $emailBody, $headers)) {

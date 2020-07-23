@@ -40,6 +40,22 @@
     font-size: 16px;
 }
 
+.msg {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 3px;
+    color: #17A05D;
+    z-index: 1;
+    background-color: #fff;
+    display: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+.msgAppear {
+    display: block;
+}
+
 @media (max-width: 991px) {
     .contact-text {
         margin-top: 2em;

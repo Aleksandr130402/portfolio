@@ -8,7 +8,8 @@ class Contact extends Component {
         this.state = {
             name : '',
             email : '',
-            message : ''
+            message : '',
+            sent: false
         }
     }
 
@@ -16,23 +17,31 @@ class Contact extends Component {
     
         e.preventDefault();
 
-        axios({
-        method: "POST", 
-        url:"php/index.php", 
-        data:  this.state
-        }).then((response)=>{
-        if (response.data.status === 'success'){
-            alert("Message Sent."); 
-            this.resetForm()
-        }else if(response.data.status === 'fail'){
-            alert("Message failed to send.")
+        let data = {
+            name: this.state.name,
+            email: this.state.email,
+            message: this.state.message
         }
+
+        axios.post('/api/forma',data)
+        .then(res=>{
+            this.setState({
+                sent: true
+            }, this.resetForm())
+        }).catch(()=> {
+            console.log('message not sent');
         })
     }  
     
     resetForm(){
-    
+
         this.setState({name: '', email: '', message: ''})
+
+        setTimeout(()=> {
+            this.setState({
+                sent: false
+            })
+        }, 3000)
      }
     
     render() {
@@ -55,6 +64,7 @@ class Contact extends Component {
                         <textarea className="form-control form-control-lg" rows="5" placeholder="Message" value={this.state.message} onChange={this.onMessageChange.bind(this)}/>
                         
                     </div>
+                    <div className={this.state.sent ? 'msg msgAppear': 'msg'}>Message has been sent</div>
                     <button type="submit" className="btn btn-secondary btn-block">Send</button>
                     </form>                                   
                 </div>
