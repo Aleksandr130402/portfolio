@@ -21,7 +21,8 @@
     max-width: 340px;
     float: right;
     margin-top: 5em;
-    margin-right: 18em;
+    margin-right: 20em;
+   
 }
 
 .contact .contact-form .btn-secondary {
@@ -60,14 +61,18 @@
     .contact-text {
         margin-top: 2em;
     }
-    
-}
-
-@media (max-width: 1125px) {
     .contact-form {
         margin-top: 2em;
         float: none;
         text-align: center;
+        width: 330px;
         margin-left: 1em;
     }
 }
+
+@media (max-width: 1125px) {
+    .contact-form {
+        margin-right: 5em;
+    }
+}
+    
