@@ -40,7 +40,7 @@ server.post('/api/sendEmail', async (request, response) => {
             <h3>Informations</h3>
             
             <p>Name: ${data.name}</p>
-            
+            <p>Email: ${data.from}</p>
             <h3>Message</h3>
             <p>${data.message}</p>
         `
