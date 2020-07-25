@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -11,7 +13,7 @@ server.use(bodyParser.urlencoded());
 server.use(express.static(path.join(__dirname, 'client/build')));
 server.use(cors());
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 server.get('/', (request, response) => {
     return response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
@@ -36,9 +38,9 @@ server.post('/api/sendEmail', async (request, response) => {
             subject: `Message from ${data.name}`,
             html: `
             <h3>Informations</h3>
-            <ul>
-                <li>Name: ${data.name}</li>
-            </ul>
+            
+            <p>Name: ${data.name}</p>
+            
             <h3>Message</h3>
             <p>${data.message}</p>
         `
