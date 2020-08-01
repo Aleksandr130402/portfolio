@@ -2,7 +2,7 @@
     height: 100vh;
     margin: 2em 4em 4em;
     padding: 1em;
-    position: relative;    
+    position: relative;
 }
 
 .contact-title h3 {
@@ -22,18 +22,17 @@
     float: right;
     margin-top: 5em;
     margin-right: 20em;
-   
 }
 
 .contact .contact-form .btn-secondary {
     background: #F97300;
     color: #fff;
-    border:0;  
+    border: 0;
 }
 
 .form-control {
     margin-top: 5px;
-    
+
 }
 
 .contact .contact-form .form-control::placeholder {
@@ -61,12 +60,12 @@
     .contact-text {
         margin-top: 2em;
     }
+
     .contact-form {
         margin-top: 2em;
         float: none;
         text-align: center;
-        width: 330px;
-        margin-left: 1em;
+        width: 100%;
     }
 }
 
@@ -75,4 +74,3 @@
         margin-right: 5em;
     }
 }
-    

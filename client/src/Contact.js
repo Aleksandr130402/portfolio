@@ -2,6 +2,23 @@ import React, {Component} from 'react'
 import './Contact.css';
 import axios from 'axios'
 
+function validateData(data) {
+    if (!data.name) {
+        alert('Введите имя');
+        return
+    }
+
+    if (!data.from) {
+        alert('Введите почту');
+        return
+    }
+
+    if (!data.message) {
+        alert('Введите сообщение');
+
+    }
+}
+
 class Contact extends Component {
     constructor(props) {
         super(props);
@@ -13,24 +30,26 @@ class Contact extends Component {
         }
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
+        try {
+            e.preventDefault();
 
-        e.preventDefault();
+            let data = {
+                name: this.state.name,
+                from: this.state.email,
+                message: this.state.message
+            };
 
-        let data = {
-            name: this.state.name,
-            from: this.state.email,
-            message: this.state.message
-        };
+            validateData(data);
 
-        axios.post('https://aleksandr-stolitenko.herokuapp.com/api/sendEmail', data)
-            .then(res => {
-                this.setState({
-                    sent: true
-                }, this.resetForm())
-            }).catch(() => {
-            console.log('message not sent');
-        })
+            const res = await axios.post('https://aleksandr-stolitenko.herokuapp.com/api/sendEmail', data);
+
+            this.setState({
+                sent: true
+            }, this.resetForm())
+        } catch (error) {
+            alert(`message not sent: ${error.message}`);
+        }
     }
 
     resetForm() {
