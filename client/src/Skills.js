@@ -14,7 +14,8 @@ export default function Skills () {
 					<dd>- Jquery</dd>
 					<dd>- Basic knowledge of Javascript</dd>
 					<dd>- HTML</dd>
-					<dd>- CSS</dd>					
+					<dd>- CSS</dd>
+					<dd>- SCSS, SASS</dd>					
 					<dd>- Bootstrap</dd>
 					</dl>
 				</div>	
