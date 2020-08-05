@@ -24,6 +24,11 @@ export default class Navigation extends Component {
                     </Link> 
                     </li>
                     <li className="nav-item">
+                    <Link className="nav-link" activeClass="active" to="education" spy={true} smooth={true} duration={500} offset={-70}>                                          
+                    Обучение                                     
+                    </Link>
+                    </li>
+                    <li className="nav-item">
                     <Link className="nav-link" activeClass="active" to="portfolio" spy={true} smooth={true} duration={500} offset={-70}>                                          
                     Портфолио                                     
                     </Link>

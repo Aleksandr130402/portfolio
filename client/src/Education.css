@@ -1,0 +1,42 @@
+.education {
+    margin: 2em 4em 4em;
+    padding: 1em;
+    position: relative;
+
+   }
+
+.education-title {
+    color: #F97300;
+    margin-bottom: 1em; 
+}
+
+.education dt {
+    height: 60px;
+    margin-bottom: 1em;
+}
+
+
+.education dd {
+    color:#767676;
+}
+
+@media (max-width: 991px) {
+    .education-about {
+        margin-top: 5em;
+    }
+    
+    .education dl {
+        width: 190px;
+    }
+}
+
+@media (max-width: 767px) {
+    .education dt {
+        margin-top: 1em;
+    }
+
+    .education dd {
+        margin-bottom: 1em;
+    }
+}
+

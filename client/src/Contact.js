@@ -70,28 +70,29 @@ class Contact extends Component {
                     <div className="contact-title">
                         <h3>Contact</h3>
                     </div>
-                    <div className="contact-text">
-                        <p>Работаете над каким-нибудь классным проектом? Есть работа для меня? Просто напишите мне.</p>
+                    <div className="contact-about">
+                        <div className="contact-text">
+                            <p>Работаете над каким-нибудь классным проектом? Есть работа для меня? Просто напишите мне.</p>
+                        </div>
+                        <div className="contact-form">
+                            <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                                <div class="form-group">
+                                    <input type="text" className="form-control form-control-lg" value={this.state.name}
+                                        onChange={this.onNameChange.bind(this)} placeholder="Your Name"/>
+
+                                    <input type="email" className="form-control form-control-lg" value={this.state.email}
+                                        onChange={this.onEmailChange.bind(this)} placeholder="YourEmail@email.com"
+                                        name="email"/>
+
+                                    <textarea className="form-control form-control-lg" rows="5" placeholder="Message"
+                                            value={this.state.message} onChange={this.onMessageChange.bind(this)}/>
+
+                                </div>
+                                <div className={this.state.sent ? 'msg msgAppear' : 'msg'}>Message has been sent</div>
+                                <button type="submit" className="btn btn-secondary btn-block">Send</button>
+                            </form>
+                        </div>
                     </div>
-                    <div className="contact-form">
-                        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                            <div class="form-group">
-                                <input type="text" className="form-control form-control-lg" value={this.state.name}
-                                       onChange={this.onNameChange.bind(this)} placeholder="Your Name"/>
-
-                                <input type="email" className="form-control form-control-lg" value={this.state.email}
-                                       onChange={this.onEmailChange.bind(this)} placeholder="YourEmail@email.com"
-                                       name="email"/>
-
-                                <textarea className="form-control form-control-lg" rows="5" placeholder="Message"
-                                          value={this.state.message} onChange={this.onMessageChange.bind(this)}/>
-
-                            </div>
-                            <div className={this.state.sent ? 'msg msgAppear' : 'msg'}>Message has been sent</div>
-                            <button type="submit" className="btn btn-secondary btn-block">Send</button>
-                        </form>
-                    </div>
-
                 </div>
             </div>
         )

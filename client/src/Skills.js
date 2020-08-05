@@ -19,10 +19,12 @@ export default function Skills () {
 					</dl>
 				</div>	
 	            <div className="col-lg-4 col-md-4 col-sm-12">
+					<dl>
 					<dt>Graphic design software</dt>
 					<dd>- Avocode</dd>
 					<dd>- Basic knowledge of Adobe Photoshop</dd>
 					<dd>- Basic knowledge of Adobe Illustrator</dd>
+					</dl>
 				</div>
 			</div>
         </div>

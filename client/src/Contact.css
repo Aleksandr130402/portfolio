@@ -56,6 +56,11 @@
     display: block;
 }
 
+@media (max-width: 767px) {
+    .contact-about {
+        width: 260px;
+    }
+}
 @media (max-width: 991px) {
     .contact-text {
         margin-top: 2em;
