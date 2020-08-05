@@ -9,7 +9,7 @@ export default class Education extends Component {
                 <div className="row">
                     <div className="col-lg-4 col-md-4 col-sm-12">
                     <dl>
-                    <dt> Киевский колледж компьютерный технологий и экономики </dt>          
+                    <dt> Киевский колледж компьютерных технологий и экономики </dt>          
                         <div className="education-about">
                         <dd> 2014 - 2018</dd>
                         
