@@ -11,8 +11,9 @@ export default function Skills () {
 				    <dl>
 				    <dt>Web Development</dt>
 					<dd>- React</dd>
+					<dd>- Redux</dd>
 					<dd>- Jquery</dd>
-					<dd>- Basic knowledge of Javascript</dd>
+					<dd>- Javascript ES6</dd>
 					<dd>- HTML</dd>
 					<dd>- CSS</dd>
 					<dd>- SCSS, SASS</dd>					
