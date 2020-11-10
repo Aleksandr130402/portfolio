@@ -45,7 +45,7 @@ class Contact extends Component {
 
             if (validateData(data)) {
 
-                const res = await axios.post('http://localhost:5000', data);
+                const res = await axios.post('https://aleksandr-stolitenko.herokuapp.com/api/sendEmail', data);
 
                 this.setState({
                 sent: true
