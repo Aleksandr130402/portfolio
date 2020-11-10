@@ -14,8 +14,8 @@ export default function Skills () {
 					<dd>- Redux</dd>
 					<dd>- Javascript ES6</dd>
 					<dd>- Jquery</dd>
-					<dd>- HTML5</dd>
-					<dd>- CSS3</dd>
+					<dd>- HTML</dd>
+					<dd>- CSS</dd>
 					<dd>- SCSS, SASS</dd>					
 					<dd>- Bootstrap</dd>
 					</dl>

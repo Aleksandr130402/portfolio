@@ -3,20 +3,23 @@ import './Contact.css';
 import axios from 'axios'
 
 function validateData(data) {
+    let valid = true;
+
     if (!data.name) {
         alert('Введите имя');
-        return
+        return valid = false;
     }
 
     if (!data.from) {
         alert('Введите почту');
-        return
+        return valid = false;
     }
 
     if (!data.message) {
         alert('Введите сообщение');
-
+        return valid = false;
     }
+    return valid;
 }
 
 class Contact extends Component {
@@ -29,8 +32,8 @@ class Contact extends Component {
             sent: false
         }
     }
-
-    async handleSubmit(e) {
+  
+        async handleSubmit(e) {
         try {
             e.preventDefault();
 
@@ -40,13 +43,15 @@ class Contact extends Component {
                 message: this.state.message
             };
 
-            validateData(data);
+            if (validateData(data)) {
 
-            const res = await axios.post('https://aleksandr-stolitenko.herokuapp.com/api/sendEmail', data);
+                const res = await axios.post('http://localhost:5000', data);
 
-            this.setState({
+                this.setState({
                 sent: true
-            }, this.resetForm())
+            }, this.resetForm());
+            }
+
         } catch (error) {
             alert(`message not sent: ${error.message}`);
         }
