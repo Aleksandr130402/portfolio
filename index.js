@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
 const path = require('path');
 const cors = require('cors');
 
@@ -23,14 +24,14 @@ server.post('/api/sendEmail', async (request, response) => {
     try {
         let data = request.body;
 
-        let smtpTransport = nodemailer.createTransport({
+        let transporter = nodemailer.createTransport(smtpTransport({
             service: 'gmail',
             auth: {
                 type: 'login',
-                user: 'prosto.saniok@gmail.com',
+                user: 'sanyoktest@gmail.com',
                 pass: process.env.EMAIL_PASS
             }
-        });
+        }));
 
         let mailOptions = {
             from: data.from,
@@ -46,7 +47,7 @@ server.post('/api/sendEmail', async (request, response) => {
         `
         };
 
-        await smtpTransport.sendMail(mailOptions);
+        await transporter.sendMail(mailOptions);
 
         return response.send('Email was successfully sent')
     } catch (e) {

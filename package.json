@@ -19,6 +19,7 @@
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "nodemailer": "^6.4.10",
+    "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^2.0.4"
   },
   "engines": {
