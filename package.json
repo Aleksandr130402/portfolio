@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "form",
   "main": "index.js",
-  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "node index.js",
     "server": "env-cmd -f ./config/dev.env nodemon index.js",
