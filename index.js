@@ -27,7 +27,7 @@ server.post('/api/sendEmail', async (request, response) => {
             service: 'gmail',
             auth: {
                 type: 'login',
-                user: 'sanyoktest@gmail.com',
+                user: 'prosto.saniok@gmail.com',
                 pass: process.env.EMAIL_PASS
             }
         });
