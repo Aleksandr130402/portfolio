@@ -9,7 +9,7 @@ const cors = require('cors');
 const server = express();
 
 server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({extended: true}));
+server.use(bodyParser.urlencoded());
 server.use(express.static(path.join(__dirname, 'client/build')));
 server.use(cors());
 
@@ -53,6 +53,5 @@ server.post('/api/sendEmail', async (request, response) => {
         return response.send('Sorry, we unable to send an email right now...')
     }
 });
-
 
 server.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));

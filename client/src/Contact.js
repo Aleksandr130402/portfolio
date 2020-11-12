@@ -45,11 +45,11 @@ class Contact extends Component {
 
             if (validateData(data)) {
 
-                const res = await axios.post('https://aleksandr-stolitenko.herokuapp.com/api/sendEmail', data);
+                await axios.post('http://aleksandr-stolitenko.herokuapp.com/api/sendEmail', data);
 
                 this.setState({
                 sent: true
-            }, this.resetForm());
+                }, this.resetForm());
             }
 
         } catch (error) {
