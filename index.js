@@ -50,7 +50,7 @@ server.post('/api/sendEmail', async (request, response) => {
 
         return response.send('Email was successfully sent')
     } catch (e) {
-        return response.send('Sorry, we unable to send an email right now...')
+        return response.send(`Sorry, we unable to send an email right now...${e.message}`)
     }
 });
 
